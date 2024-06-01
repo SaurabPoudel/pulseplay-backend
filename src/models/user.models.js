@@ -59,7 +59,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-// bcrypt can check if it is correct or not haha looks someone can take advantage of it
+// bcrypt can check if it is correct or not, haha looks like someone can take advantage of it
 userSchema.methods.isPasswordCorrect = async function (password) {
   // takes time so await
   return await bcrypt.compare(password, this.password);
